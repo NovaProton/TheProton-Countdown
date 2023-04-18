@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="icon.png" />
+    <!-- V1.6 - NovaP - Apple Support Added -->
+    <!-- V1.8 - NovaP - Hour and Min Support -->
+    <!-- V1.8.5 - NovaP - Offline Availability -->
+    <!-- V1.9 - NovaP - Info button and how to added -->
+    <script src="https://kit.fontawesome.com/702d3d6642.js" crossorigin="anonymous"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheProton Countdown</title>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <button class="info-button">
+        <i class="fa-duotone fa-circle-question fa-beat" style="--fa-primary-color: #ffffff; --fa-secondary-color: #ffffff;"></i>
+    </button>
+    <div class="info-popup">
+        <h2>TheProton Countdown</h2>
+        <h3><u>How to use</u></h3>
+        <hr>
+
+        <p>You can input the time in Hours and Minutes</p>
+        <hr>
+
+        <p>once you ready you can click "Start Countdown"</p>
+        <hr>
+
+        <p>If need to reset the countdown just click on "Reset"</p>
+        <hr>
+
+        <p>If you refresh the the page it will keep you countdown</p>
+        <hr>
+
+        <h6 id="copyright"> &copy; 1929 TheProton. <br>All rights reserved.</h6>
+    </div>
+
+    <div class="container">
+
+        <input type="number" id="hours" placeholder="Hours" min="0">
+        <input type="number" id="minutes" placeholder="Minutes" min="1"><br>
+        <button id="start">Start Countdown</button><br>
+        <div id="time" class="time"></div><br>
+        <button id="reset">Reset</button>
+    </div>
+    <div class="water"></div>
+    <div class="logo-container">
+        <a href="https://www.theproton.space/" target="_blank">
+            <img src="TPT.png" alt="Your Logo" style="width: 100px; height: auto;">
+        </a>
+    </div>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('sw.js')
+        .then((registration) => {
+          console.log('Service Worker registered with scope: ', registration.scope);
+          // Add this line to force the service worker to update
+          registration.update();
+        })
+        .catch((error) => {
+          console.log('Service Worker registration failed: ', error);
+        });
+    });
+  }
+</script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
